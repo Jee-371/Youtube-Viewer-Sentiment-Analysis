@@ -95,7 +95,7 @@ def main():
         test_size = params['data_ingestion']['test_size']
         
         # Load data from the specified URL
-        df = load_data(data_url='https://github.com/Jee-371/Youtube-Viewer-Sentiment-Analysis/blob/main/data/reddit.csv')
+        df = load_data(data_url='https://raw.githubusercontent.com/Jee-371/Youtube-Viewer-Sentiment-Analysis/main/data/reddit.csv')
         
         # Preprocess the data
         final_df = preprocess_data(df)
