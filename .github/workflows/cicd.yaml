@@ -88,10 +88,8 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
 
       - name: Login to Amazon ECR
-        run: aws ecr get-login-password --region ap-southeast-2 | docker login --username AWS --password-stdin 244875020005.dkr.ecr.ap-southeast-2.amazonaws.com
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v1
       
       - name: Debug full Docker image reference
         run: |
